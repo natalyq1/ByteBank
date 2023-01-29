@@ -1,1 +1,4 @@
-<app-nueva-transferencia></app-nueva-transferencia>
+<app-nueva-transferencia (enviarDatos)="transferir($event)"></app-nueva-transferencia>
+
+<p>Valor: <strong>{{ transferencia.valor }}</strong> </p>
+<p>Destino: <strong>{{ transferencia.destino }}</strong> </p>
