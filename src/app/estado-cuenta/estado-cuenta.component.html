@@ -5,7 +5,7 @@
       <th>Destino:</th>
       <th>Fecha:</th>
     </thead>
-    <tbody>
+    <tbody *ngIf="transferencias.length > 0; else listavacia">
       <tr *ngFor="let transferencia of transferencias">
         <td>{{ transferencia?.valor }}</td>
         <td>{{ transferencia?.destino }}</td>
@@ -15,3 +15,6 @@
   </table>
 </div>
 
+<ng-template #listavacia>
+  <p>No hay ninguna transferencia registrada.</p>
+</ng-template>
