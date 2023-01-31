@@ -7,11 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  transferencia:any = {}
+  transferencias:any = [] = []
 
   transferir($event:any){
     console.log("Este mensaje es de app component",$event);
-    this.transferencia = $event
+    this.transferencias.push($event)
 
   }
 }

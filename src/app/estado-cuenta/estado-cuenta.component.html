@@ -1,0 +1,17 @@
+<div class="estadoContainer">
+  <table>
+    <thead>
+      <th>Valor: </th>
+      <th>Destino:</th>
+      <th>Fecha:</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transferencia of transferencias">
+        <td>{{ transferencia?.valor }}</td>
+        <td>{{ transferencia?.destino }}</td>
+        <td>{{ transferencia?.fecha | date:"short" }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
