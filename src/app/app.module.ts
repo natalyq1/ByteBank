@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { EstadoCuentaComponent } from './estado-cuenta/estado-cuenta.component';
 
 import { HttpClientModule } from "@angular/common/http"
+import { AppRoutingModule } from './app-routing';
 
 registerLocaleData(localeEs, "es")
 
@@ -23,7 +24,8 @@ registerLocaleData(localeEs, "es")
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'es'}

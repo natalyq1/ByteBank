@@ -22,7 +22,8 @@ export class TransferenciasService {
     return this.listatransferencias
   }
 
-  agregar($event: any){
-    this.transferencias.push($event)
+  agregar(transferencia: Transferencia): Observable<Transferencia>{
+    //this.transferencias.push($event)
+    return this.HttpClient.post<Transferencia>(this.url, transferencia)
   }
 }

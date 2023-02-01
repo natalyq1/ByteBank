@@ -1,4 +1,7 @@
+import { Router } from '@angular/router';
+import { Transferencia } from '../models/transferencia.model';
 import { Component, Output, EventEmitter } from '@angular/core';
+import { TransferenciasService } from '../services/transferencias.service';
 
 @Component({
   selector: 'app-nueva-transferencia',
@@ -6,18 +9,22 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./nueva-transferencia.component.scss']
 })
 export class NuevaTransferenciaComponent {
-  @Output() enviarDatos = new EventEmitter<any>()
+  constructor(private service:TransferenciasService, private router: Router){
+  }
 
   valor: string = ''
   destino: string = ''
   transferir(){
-
-    const datos = {
+    const datos: Transferencia = {
       valor: this.valor,
       destino: this.destino,
       fecha: new Date()
     }
-  this.enviarDatos.emit(datos)
+
+  this.service.agregar(datos).subscribe (()=>{
+    this.router.navigateByUrl("/estado")
+  },(err) => console.log(err));
+
   this.limpiarCampos()
   }
   limpiarCampos(){

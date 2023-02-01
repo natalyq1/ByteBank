@@ -6,14 +6,20 @@
 
 table {
   width: 50%;
+  margin: 2em;
 }
 
 th {
   border-bottom: 4px solid var(--primary);
+  margin: 1em 1em;
 }
 
 th,
 tr {
   color: var(--primary);
   text-align: center;
+  padding: 0.6em 0.4em;
+}
+td{
+  padding: 0.3em 0.5em;
 }
